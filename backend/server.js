@@ -6,7 +6,9 @@ const socketIo = require('socket.io');
 require('dotenv').config();
 
 const app = express();
+
 const server = http.createServer(app);
+const allowedOrigins = ['https://leaderboard-ochx.vercel.app', 'http://localhost:3000'];
 const io = socketIo(server, {
   cors: {
     origin: allowedOrigins,
@@ -16,11 +18,6 @@ const io = socketIo(server, {
 });
 
 
-// Middleware
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://your-vercel-frontend.vercel.app',  // ✅ Replace with your actual Vercel domain
-];
 
 app.use(cors({
   origin: allowedOrigins,
