@@ -19,7 +19,7 @@ function App() {
   const [leaderboard, setLeaderboard] = useState([]);
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [socket, setSocket] = useState(null);
+ 
 
   // Initialize socket connection
   useEffect(() => {
@@ -76,10 +76,10 @@ function App() {
     }
 
     setLoading(true);
-    try {
-      const response = await axios.post(`${API_BASE_URL}/claim-points`, {
-        userId: selectedUser
-      });
+try {
+  await axios.post(`${API_BASE_URL}/claim-points`, {
+    userId: selectedUser
+  });
 
       // The real-time update will be handled by socket.io
       // toast.success(`${response.data.pointsAwarded} points claimed for ${response.data.user.name}!`);
@@ -165,6 +165,6 @@ function App() {
       />
     </div>
   );
-}
 
+}
 export default App;
