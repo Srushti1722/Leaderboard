@@ -11,7 +11,8 @@ import Leaderboard from './components/Leaderboard';
 import AddUserForm from './components/AddUserForm';
 import PointsHistory from './components/PointsHistory';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = 'https://leaderboard-yi02.onrender.com/api';
+
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,8 @@ function App() {
 
   // Initialize socket connection
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://leaderboard-yi02.onrender.com');
+
     setSocket(newSocket);
 
     // Listen for real-time updates
