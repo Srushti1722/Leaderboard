@@ -19,7 +19,8 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/leaderboard', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Leaderboard:admin123@cluster0.06jyyt7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
